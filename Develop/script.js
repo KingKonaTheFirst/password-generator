@@ -17,7 +17,12 @@ let alphabetUpper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O'
         upper = confirm("How about upper case letters?");
         signs = confirm("want those weird symbols");
 
-    }
+    } else {
+      confirm("Please choose between 8 and 128 & press generate again");
+        // if(pwLength >=8 && pwLength <=128){
+        //   writePassword();
+      }
+    
   
   
   
