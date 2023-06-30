@@ -6,7 +6,8 @@ let number = ['0','1','2','3','4','5','6','7','8','9'];
 let specialChar = ['!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','}','[',']'];
 let alphabetLower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 let alphabetUpper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-
+var pwBuilder = [];
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 // Write password to the #password input
   function writePassword() {
     var pwLength = prompt("How long? Choose between 8 and 128")
@@ -16,13 +17,23 @@ let alphabetUpper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O'
         lower = confirm("Do you want lower case letters?");
         upper = confirm("How about upper case letters?");
         signs = confirm("want those weird symbols");
-
-    } else {
+      } else {
       confirm("Please choose between 8 and 128 & press generate again");
-        // if(pwLength >=8 && pwLength <=128){
-        //   writePassword();
-      }
-    
+        }
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+  //pw building
+  if (numbs){
+    pwBuilder = pwBuilder.concat(numbs);
+  }
+  if (lower){
+    pwBuilder = pwBuilder.concat(lower);
+  }  
+  if (upper){ 
+    pwBuilder = pwBuilder.concat(upper);
+  }
+  if(signs){
+    pwBuilder = pwBuilder.concat(signs);
+  }
   
   
   
