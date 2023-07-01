@@ -6,11 +6,12 @@ let number = ['0','1','2','3','4','5','6','7','8','9'];
 let specialChar = ['!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','}','[',']'];
 let alphabetLower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 let alphabetUpper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var pwBuilder = [];
-var finishedPW = "";
+
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 // Write password to the #password input
   function generatePassword() {
+    var pwBuilder = [];
+    var finishedPW = "";
     var numbs;
     var lower;
     var upper;
@@ -23,8 +24,9 @@ var finishedPW = "";
         upper = confirm("How about upper case letters?");
         signs = confirm("want those weird symbols");
       } else {
-      confirm("Please choose between 8 and 128 & press generate again");
-        }
+      alert("Please choose between 8 and 128 & press generate again");
+      return "";    
+    }
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
   //pw building
   if (numbs){
@@ -39,8 +41,11 @@ var finishedPW = "";
   if(signs){
     pwBuilder = pwBuilder.concat(specialChar);
   }
-  console.log(pwBuilder);
-  
+  // console.log(pwBuilder);
+  if (pwBuilder.length === 0){
+    alert("Please select some things to add-_-");
+    return "";
+  }
   
   for (var i = 0; i < pwLength; i++){
 
