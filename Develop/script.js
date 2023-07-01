@@ -1,5 +1,5 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
 // pw generation indexs
 let number = ['0','1','2','3','4','5','6','7','8','9'];
@@ -11,6 +11,10 @@ var finishedPW = "";
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 // Write password to the #password input
   function generatePassword() {
+    var numbs;
+    var lower;
+    var upper;
+    var signs;
     var pwLength = prompt("How long? Choose between 8 and 128")
       if (pwLength >=8 && pwLength <=128){
         //pw specs
@@ -24,33 +28,35 @@ var finishedPW = "";
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
   //pw building
   if (numbs){
-    pwBuilder = pwBuilder.concat(numbs);
+    pwBuilder = pwBuilder.concat(number);
   }
   if (lower){
-    pwBuilder = pwBuilder.concat(lower);
+    pwBuilder = pwBuilder.concat(alphabetLower);
   }  
   if (upper){ 
-    pwBuilder = pwBuilder.concat(upper);
+    pwBuilder = pwBuilder.concat(alphabetUpper);
   }
   if(signs){
-    pwBuilder = pwBuilder.concat(signs);
+    pwBuilder = pwBuilder.concat(specialChar);
   }
+  console.log(pwBuilder);
   
   
-  for (var i = 0; i < length; i++){
+  for (var i = 0; i < pwLength; i++){
 
-    finishedPW = finishedPW + pwBuilder[Math.floor(Math.random() + pwBuilder.length)];
+    finishedPW = finishedPW + pwBuilder[Math.floor(Math.random() * pwBuilder.length)];
   }
+
   return finishedPW;
   }
   
- var writePassword = function(){
+ function writePassword(){
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
  }
-
+ var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
