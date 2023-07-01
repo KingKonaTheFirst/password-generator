@@ -6,7 +6,7 @@ Generates passwords to your specifications, whether thats all lower case, upper 
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./Assets/imgs/screenshot.png)
 
 
 ## Deployment
