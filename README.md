@@ -10,7 +10,7 @@ Generates passwords to your specifications, whether thats all lower case, upper 
 
 
 ## Deployment
-kingkonathefirst.github.com/password-generator
+[Click Here](kingkonathefirst.github.io/password-generator)
 
 # License
 
